@@ -1,7 +1,26 @@
 # Stream Deck for Linux (Unofficial)
 
-[![Build Status](https://travis-ci.com/TimothyCole/Stream-Deck-for-Linux.svg?branch=master)](https://travis-ci.com/TimothyCole/Stream-Deck-for-Linux)
-[![Personal Discord](https://img.shields.io/discord/313591755180081153.svg?label=Personal%20Discord&colorB=308bcd&maxAge=3600)](https://discordapp.com/invite/YFtfGwq)
+<p align="center">
+	<a target="_blank" href="https://github.com/TimothyCole/Stream-Deck-for-Linux/issues">
+		<img src="https://img.shields.io/github/issues-raw/TimothyCole/Stream-Deck-for-Linux.svg" alt="Open Issues" />
+	</a>
+	<a target="_blank" href="https://github.com/TimothyCole/Stream-Deck-for-Linux/releases/latest">
+		<img src="https://img.shields.io/github/release/TimothyCole/Stream-Deck-for-Linux.svg" alt="Latest Release" />
+	</a>
+	<a target="_blank" href="https://github.com/TimothyCole/Stream-Deck-for-Linux/blob/master/LICENSE">
+		<img src="https://img.shields.io/badge/license-MIT-green.svg" alt="MIT license" />
+	</a>
+	<a target="_blank" href="https://travis-ci.com/TimothyCole/Stream-Deck-for-Linux">
+		<img src="https://travis-ci.com/TimothyCole/Stream-Deck-for-Linux.svg?branch=master" alt="Build Status" />
+	</a>
+	<br />
+	<a target="_blank" href="https://modest.land/discord">
+		<img src="https://img.shields.io/discord/313591755180081153.svg?label=&amp;logo=discord&amp;logoColor=ffffff&amp;color=7389D8&amp;labelColor=6A7EC2" alt="Discord" />
+	</a>
+	<a target="_blank" href="https://twitter.com/intent/follow?screen_name=ModestTim">
+		<img src="https://img.shields.io/twitter/follow/modesttim.svg?style=social" alt="Twitter Follow" />
+	</a>
+</p>
 
 ---
 
