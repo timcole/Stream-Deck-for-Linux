@@ -1,0 +1,39 @@
+.menu {
+	background: var(--sidebar-background);
+	height: 100%;
+	width: 275px;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+
+	&.hide { display: none; }
+
+	.section {
+		border-bottom: 1px solid var(--sidebar-header);
+
+		h3 {
+			margin: 0;
+			background: var(--sidebar-header);
+			padding: 5px 15px;
+			font-weight: 500;
+		}
+
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+
+			li {
+				padding: 5px;
+				font-size: 0.95rem;
+				cursor: move;
+
+				.material-icons { padding-right: 5px; }
+
+				* { vertical-align: middle; }
+
+				&:hover {
+					background: var(--sidebar-header);
+				}
+			}
+		}
+	}
+}

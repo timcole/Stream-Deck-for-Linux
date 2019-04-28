@@ -1,3 +1,7 @@
 .vscode/*
 .env
 debug*
+node_modules/
+.cache/
+build/
+assets.go
