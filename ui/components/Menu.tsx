@@ -8,9 +8,9 @@ class Menu extends React.Component<any> {
 				<div className="section">
 					<h3>System</h3>
 					<ul>
-						<li><i class="material-icons">language</i> Website</li>
-						<li><i class="material-icons">keyboard</i> Hotkey</li>
-						<li><i class="material-icons">launch</i> Open</li>
+						<li><i className="material-icons">language</i> Website</li>
+						<li><i className="material-icons">keyboard</i> Hotkey</li>
+						<li><i className="material-icons">launch</i> Open</li>
 					</ul>
 				</div>
 			</div>

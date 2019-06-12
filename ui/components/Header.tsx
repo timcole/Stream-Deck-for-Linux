@@ -11,7 +11,7 @@ class Header extends React.Component {
 				<div>
 					<img src={logo} alt="Stream Deck for Linux" />
 				</div>
-				<i class="material-icons">settings</i>
+				<i className="material-icons">settings</i>
 			</div>
 		);
 	}

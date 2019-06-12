@@ -38,8 +38,6 @@ This project is in no way supported or affliated by/with Elgato.
 ## Downloading
 There currently isn't a version ready for download at this time.
 
-You will also need to have Chrome installed on your machine.  This requirement is due to the UI using the [Lorca](https://github.com/zserge/lorca) library.  This is more lightweight than something like Electron because it doesn't bundle Chrome into the app itself, but reuses the one that is already installed on your machine.
-
 ---
 
 ## Building

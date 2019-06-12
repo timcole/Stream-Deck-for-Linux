@@ -9,10 +9,19 @@ import (
 	"time"
 
 	"github.com/TimothyCole/Stream-Deck-for-Linux/pkg/streamdeck"
+	"github.com/asticode/go-astilectron"
+	"github.com/asticode/go-astilog"
 	"github.com/nfnt/resize"
 )
 
-var waiting = make(chan bool)
+var done = make(chan bool)
+
+var ui *astilectron.Astilectron
+var w *astilectron.Window
+var err error
+
+// AppName from ldflags
+var AppName string
 
 func main() {
 	decks, err := streamdeck.FindDevices()
@@ -27,6 +36,46 @@ func main() {
 		}
 	}()
 
+	ui, err = astilectron.New(astilectron.Options{
+		AppName:           "Stream Deck for Linux",
+		BaseDirectoryPath: os.TempDir(),
+	})
+	if err != nil {
+		log.Println(err)
+		return
+	}
+	defer ui.Close()
+	ui.HandleSignals()
+
+	ui.On(astilectron.EventNameAppCrash, func(e astilectron.Event) (deleteListener bool) {
+		astilog.Error("App has crashed")
+		return
+	})
+
+	if err = ui.Start(); err != nil {
+		log.Fatal(err)
+		return
+	}
+
+	// New tray
+	var t = ui.NewTray(&astilectron.TrayOptions{
+		Image:   astilectron.PtrStr("./streamdeck.png"),
+		Tooltip: astilectron.PtrStr("Stream Deck for Linux"),
+	})
+	t.Create()
+	t.On(astilectron.EventNameTrayEventClicked, func(e astilectron.Event) (deleteListener bool) {
+		if w != nil {
+			w.Show()
+		}
+		log.Println(e)
+		return
+	})
+
+	go func() {
+		ui.Wait()
+		done <- true
+	}()
+
 	go onReady()
 
 	for _, deck := range decks {
@@ -36,13 +85,8 @@ func main() {
 		}
 
 		go deck.Read()
-
-	UpdateDecks:
-		for {
-			select {
-			case <-waiting:
-				break UpdateDecks
-			default:
+		go func(deck *streamdeck.Deck) {
+			for {
 				hello, _ := os.Open("Gopher.png")
 				defer hello.Close()
 				img, err := png.Decode(hello)
@@ -61,6 +105,8 @@ func main() {
 
 				time.Sleep(time.Second)
 			}
-		}
+		}(deck)
 	}
+
+	<-done
 }

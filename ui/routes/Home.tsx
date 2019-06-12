@@ -7,13 +7,21 @@ class Home extends React.Component {
 	constructor(props) {
 		super(props);
 		this.keys = 15;
+
+		document.addEventListener('astilectron-ready', function () {
+			// This will listen to messages sent by GO
+			// @ts-ignore
+			window.astilectron.onMessage(function (message) {
+				console.log(message);
+			});
+		})
 	}
 
 	render() {
 		return (
 			<div className="streamdeck">
 				{new Array(this.keys).fill(null).map(d => (
-					<div className="button"></div>
+					<div className="button" key={Math.random()}></div>
 				))}
 			</div>
 		);

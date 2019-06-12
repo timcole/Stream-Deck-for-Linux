@@ -1,0 +1,12 @@
+{
+	"app_name": "Stream Deck for Linux",
+	"icon_path_linux": "./streamdeck.png",
+	"environments": [
+		{ "arch": "amd64", "os": "linux" }
+	],
+	"output_path": "./bin/",
+	"bind": {
+		"output_path": "./pkg/bind/",
+		"package": "bind"
+	}
+}
