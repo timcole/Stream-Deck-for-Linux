@@ -14,5 +14,8 @@ html, body {
 	height: 100%;
 	user-select: none;
 
-	.router { flex: 1; }
+	.router {
+		flex: 1;
+		overflow: auto;
+	}
 }

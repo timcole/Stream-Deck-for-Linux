@@ -22,6 +22,8 @@
 	</a>
 </p>
 
+<img src="https://cdn.tcole.me/EDevOOYIxh.png" />
+
 ---
 
 ### Information

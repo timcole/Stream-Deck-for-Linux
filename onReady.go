@@ -9,7 +9,6 @@ import (
 
 	"github.com/TimothyCole/Stream-Deck-for-Linux/pkg/bind"
 	"github.com/asticode/go-astilectron"
-	"github.com/asticode/go-astilog"
 	assetfs "github.com/elazarl/go-bindata-assetfs"
 )
 
@@ -53,20 +52,14 @@ func onReady() {
 		m.Unmarshal(&s)
 
 		log.Println(s)
-		if s == "close" {
+		switch s {
+		case "close":
 			w.Hide()
-			return nil
+		case "openDevTools":
+			w.OpenDevTools()
+		case "closeDevTools":
+			w.CloseDevTools()
 		}
 		return nil
 	})
-	w.SendMessage("hello", func(m *astilectron.EventMessage) {
-		// Unmarshal
-		var s string
-		m.Unmarshal(&s)
-
-		// Process message
-		astilog.Debugf("received %s", s)
-	})
-
-	w.OpenDevTools()
 }
